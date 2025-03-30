@@ -91,6 +91,13 @@ warning: failed to mlock 426467328-byte buffer (after previously locking 0 bytes
 Try increasing RLIMIT_MEMLOCK ('ulimit -l' as root).
 ```
 
+The app loads embeddings onto the CPU as well.
+
+```python
+    model_kwargs = {'device':'cpu'}
+    embeddings = HuggingFaceEmbeddings(model_kwargs=model_kwargs)
+```
+
 Run chatbot
 
 ```bash
